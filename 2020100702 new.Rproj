@@ -1,0 +1,100 @@
+---
+title: "20201007 economy 1a ian"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r}
+a <- 15 # 變數設定
+b <- a # 呼叫a的值，用來設定變數b的值，相當於 b <- 15
+```
+
+```{r}
+c <- y
+myName <-  "Mary"  
+length(myName)
+num1 <- 5
+vNum1 <- c(2,5)
+vNum2 <- c(2,num1)
+length(vNum2)
+
+```
+```{r}
+vNum1 <- vNum2
+vNum2 <- c(2,vNum1)
+# method 1: concatenet
+heightsOfastudentcominginsidetheClassroom <- sample(165:200,1)
+heightsOftheEntireClassroom <- c(heightsOftheEntireClassroom, heightsOfastudentcominginsidetheClassroom)
+```
+```{r}
+heightsOftheEntireClassroom <- c()
+
+heightsOftheEntireClassroom2 <- c()
+```
+```{r}
+heightOfAStudentComingInsideTheClassroom <- sample(165:200,1)
+```
+
+```{r}
+# method 1: concatenate 
+heightsOftheEntireClassroom <-
+  c(
+    heightsOftheEntireClassroom,
+    heightOfAStudentComingInsideTheClassroom
+  )
+```
+```{r}
+# method 2: 
+heightsOftheEntireClassroom2 <-
+  heightOfAStudentComingInsideTheClassroom
+```
+```{r}
+c(5, "mary") #non-Atomic
+c(5, 7)
+c(T,TRUE,F,FALSE)
+c(T,T,F,F)
+
+```
+```{r}
+num1<-5 # 非整數
+num2<-5L # 整數
+
+num1Vector<-c(5,6,7)
+num2Vector<-c(5L,6L,7L)
+```
+```{r}
+object.size(num1)
+object.size(num2)
+object.size(num1Vector)
+object.size(num2Vector)
+```
+```{r}
+typeof(num1)
+typeof(num2)
+char1 <- ("cassie")
+typeof(char1) # 在定義object value時，必需要用「成對」的雙引號"或單引號'，把每個字串括起來。
+class(num2)#查詢上述物件類別
+```
+
