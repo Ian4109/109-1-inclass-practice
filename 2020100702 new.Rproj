@@ -1,5 +1,5 @@
 ---
-title: "20201007 economy 1a ian"
+title: "2020100703 new"
 output: html_document
 ---
 
@@ -26,11 +26,6 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-```{r}
-a <- 15 # 變數設定
-b <- a # 呼叫a的值，用來設定變數b的值，相當於 b <- 15
-```
-
 ```{r}
 c <- y
 myName <-  "Mary"  
@@ -96,5 +91,28 @@ typeof(num2)
 char1 <- ("cassie")
 typeof(char1) # 在定義object value時，必需要用「成對」的雙引號"或單引號'，把每個字串括起來。
 class(num2)#查詢上述物件類別
+```
+```{r}
+dialogue <- c('小明說："明天不用上課。"',
+               '小花說："真的嗎？"')
+
+dialogue # 顯示原始值的內容（含輸入時的引號）
+cat(dialogue, sep="\n") # 顯示給人類看（含存出來）的值，sep="\n", 不同元素換行陳列。
+writeLines(dialogue, "conversation.txt") # cat顯示的正是存出來樣貌。
+```
+```{r}
+#若要產生小明說："明天不用上課。"，值的內容有包含"，這時可改用成對的'定義字串值
+cat(dialogue, sep="\n")
+cat(
+  dialogue, sep="\n"
+)
+cat(
+  dialogue,
+  sep="\n"
+)
+```
+```{r}
+context <- "老師說換行要寫\\n"
+cat(context)
 ```
 
