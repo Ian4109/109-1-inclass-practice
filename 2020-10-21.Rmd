@@ -1,0 +1,105 @@
+---
+title: "課?<a0>?練習模<e7><89><88>"
+author: "IanChen"
+date: "2020-10-21"
+output: output_format
+params:
+  id: "410973079"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Your code
+
+```{r}
+knitr::opts_chunk$set(echo = F, eval=F)
+library(lubridate); library(jsonlite); library(readr)
+```
+```{r}
+ymd_hms("2020-10-21 10:30:30")
+```
+
+```{r}
+tpeTime <- hms('10:30:30')
+```
+
+```{r}
+class(tpeTime)
+```
+```{r}
+ymd_hms(
+  c("2020-10-21 14:26:43","2020-10-22 10:30:32")
+)
+```
+```{r}
+ymd_hms(("2020-10-21T10:21:30Z"))
+```
+
+
+```{r}
+library(lubridate)
+
+# Date/Time class
+purchasingTime <- 
+  ymd_hms("2020-03-31T13:40:55Z")
+
+# character
+location <- "一芳"
+item <- "水果茶"
+
+# numeric
+quantity <- 2
+
+mingsPurchase <-
+  list(
+    purchasingTime, 
+    location, 
+    quantity, 
+    item
+  )
+print(mingsPurchase)
+```
+
+
+
+```{r}
+# NBA1920Final567
+date <- ymd('Oct. 9')
+starttime <- ymd_hm("21:00")
+timezone <- tz("ET")
+away <- "Miami Heat"
+home <- "L.A Lakers"
+game5 <-
+    list(
+      `Date` = date,
+      "StartTime" = starttime,
+      "Timezone" = timezone,
+      "Away" = away,
+      "Home" = home
+    )
+print(game5)      
+      
+```
+
+
+```{r}
+date <- ymd('2020 Oct. 9')
+starttime <- ymd_hm("20201009 E21:00T")
+timezone <- tz("ET")
+away <- "Miami Heat"
+home <- "L.A Lakers"
+game5 <-
+    list(
+      Date = date,
+      "StartTime" = starttime,
+      "Timezone" = timezone,
+      "Away" = away,
+      "Home" = home
+    )
+print(game5)
+}
+```
+
+
