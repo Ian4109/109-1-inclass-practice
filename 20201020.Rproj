@@ -1,100 +1,13 @@
----
-title: '20201020'
-author: "ian"
-date: "2020/10/21"
-output: html_document
----
+Version: 1.0
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+RestoreWorkspace: Default
+SaveWorkspace: Default
+AlwaysSaveHistory: Default
 
-## R Markdown
+EnableCodeIndexing: Yes
+UseSpacesForTab: Yes
+NumSpacesForTab: 2
+Encoding: UTF-8
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-```{r}
- "\u0928\u092e\u0938\u094d\u0924\u0947 \u0926\u0941\u0928\u093f\u092f\u093e"
-```
-
-```{r}
-num <- c(1.5, 2, 3)
-int <- c(1L, 3L, -2L)
-char <- c("1.5","2","3")
-logi <- c(T,T,F)
-typeof(num)
-typeof(int)
-typeof(char)
-typeof(logi)
-```
-
-```{r}
-class(num)
-class(int)
-class(char)
-class(logi)
-```
-```{r}
-1+5
-```
-```{r}
-# 10位學生的主系
-majors10_char <- c('經濟學系','社會學系','社會學系','經濟學系','經濟學系','社會學系','經濟學系','經濟學系','經濟學系','社會學系')
-typeof(majors10_char)
-class(majors10_char)
-```
-
-```{r}
-# 10位學生的主系
-majors10_factor <-
-  factor(
-c('經濟學系','社會學系','社會學系','經濟學系','經濟學系','社會學系','經濟學系','經濟學系','經濟學系','社會學系'))
-typeof(majors10_char)
-class(majors10_char)
-```
-
-
-```{r}
-majors10_factor <- factor(majors10_char)
-# 或
-majors10_factor <- factor(
-  c('經濟學系','社會學系','社會學系','經濟學系','經濟學系','社會學系','經濟學系','經濟學系','經濟學系','社會學系')
-)
-typeof(majors10_factor)
-class(majors10_factor)
-```
-
-```{r}
-numeric()
-```
-
-```{r}
-a <- 1
-as.numeric(a)
-a+4
-```
-
-```{r}
-int(input)
-```
-
-```{r}
-majors10_char
-majors10_factor
-as.integer(majors10_factor)
-```
+RnwWeave: Sweave
+LaTeX: pdfLaTeX
