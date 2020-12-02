@@ -1,0 +1,187 @@
+---
+title: '2021-12-02'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r}
+old_fct <- 
+  factor(c("4以下","5-10","11-15"))
+levels(old_fct) # 依序下的各類別名稱
+```
+```{r}
+levels(old_fct)
+```
+```{r}
+levels(old_fct) <- c("青少年", "幼兒", "兒童")
+levels(old_fct)
+old_fct
+```
+```{r}
+set.seed(2018)
+gender <- 
+  sample(c("M","F"),10000,replace = T)
+head(gender)
+```
+
+```{r}
+set.seed(3)
+ages_chr <- sample(c("4以下","5-10","11-15"), 15, replace=T)
+head(ages_chr)
+```
+
+```{r}
+set.seed(9090)
+number <- 
+  sample(c("1","2","3","4"),100,replace = T)
+number
+unique(number)
+table(number)
+```
+```{r}
+ages_chr1 <- factor(ages_chr)
+```
+```{r}
+ages_chr1
+```
+```{r}
+table(ages_chr1)
+ages_fct2 <- factor(ages_chr,
+                    levels = c("4以下","5-10","11-15"))
+table(ages_fct2)
+```
+```{r}
+factor(
+  字面資訊向量
+)
+```
+
+```{r}
+factor(
+  字面資訊向量,
+  levels = 類別資訊呈現時的先後順序向量
+)
+```
+
+```{r}
+ages_fct2[[3]] #4以下
+ages_fct2[[6]] #5-10
+ages_fct2[[3]] > ages_fct2[[6]]
+```
+
+```{r}
+ages_fct3 <- factor(
+  ages_fct2,
+  levels = c("4以下","5-10","11-15"),
+  ordered = TRUE # 告訴電腦類別呈現的先後順序，即可比大小的小（先）大（後）順序
+)
+```
+```{r}
+ages_fct3[[3]] #4以下
+ages_fct3[[6]] #5-10
+ages_fct3[[3]] > ages_fct3[[6]]
+ages_fct3[[6]] < "11-15" # 也可以用文字寫下levels中有的分類
+```
+
+```{r}
+# 忘了告訴電腦是ordered factor
+ages_fct2_order = factor(ages_fct2, ordered=T)
+ages_fct2_order
+# 也可以
+ages_fct2_order = as.ordered(ages_fct2)
+
+# 忘了告訴電腦呈現順序是"11-15","5-10","4以下"
+ages_fct3_newLevels = 
+  factor(
+    ages_fct3, 
+    levels = c("11-15","5-10","4以下")
+  )
+ages_fct3_newLevels
+is.ordered(ages_fct3_newLevels)
+```
+
+```{r}
+redline_100px <- rep("red",100)
+as.raster(matrix(redline_100px,10,10)) -> redline_100px
+plot(redline_100px)
+```
+
+```{r}
+gender_fct <- factor(gender)
+levels(gender_fct
+       ) <- c("女","男")
+head(gender_fct)
+```
+
+
+```{r}
+
+a <- c(206,188)
+names(a)
+names(a) <- c("Bam","Seth")
+a
+a[["Seth"]]
+```
+```{r}
+old_fct2 <- 
+  factor(c("4以下","5-10","11-15", "5-10"))
+levels(old_fct2)
+levels(old_fct2) <- c("4以下","5-10","11-15")
+old_fct2
+old_fct
+```
+```{r}
+set.seed(20201)
+ages_chr33 <- 
+  sample(c("4以下","5-9","10-14", "15-19"),20,replace = T)
+ages_chr33
+```
+```{r}
+ages_fctBy5 <- 
+  factor(
+    ages_chr33,
+    levels = c("4以下","5-9","10-14","15-19")
+  )
+
+
+
+levels(ages_fctBy5)
+table(ages_fctBy5)
+```
+```{r}
+levels(ages_fctBy5) <- c("10以下", "10以下", "10以上", "10以上")
+table(ages_fctBy5)
+```
+
+
+
+
+
+
+
+
+
+
+
