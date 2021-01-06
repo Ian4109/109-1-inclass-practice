@@ -84,7 +84,35 @@ getPDV(0.09 ,T = 3, M = 10000 )
 ```
 
 ```{r}
-debug(getPDV)
+debug(getPDV) 
+getPDV(R=0.09, T=3, M=10000) 
+undebug(getPDV)
+
+```
+```{r}
+#### level 3 [0.35]
+
+將courses107每個科目應修系級拆成vector of characters, course107有42576門科目，所以拆完後是list of 42576，存在**forMajors**物件裡 每個系級是一個元素值。，
+
+  * forMajors: list of 42576 elements, 每個元素值是個character vector。[0.15]
+  
+請計算**forMajors**每個元素值有多少個系級，並存在**n_appliedMajors**。
+
+  * n_appliedMajors: an integer class vector of 42576 elements。[0.2]
+
+```{r ans123}
+forMajors <- NULL
+n_appliedMajors <- NULL
+###
+
+
+###
+ansObj12[[3]] <- list(
+  forMajors=forMajors,
+  n_appliedMajors=n_appliedMajors
+)
+
+```
 ```
 
 
