@@ -1,0 +1,102 @@
+---
+title: '20210106'
+author: "IanChan"
+date: "2021/1/6"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+```{r}
+set.seed(10739)
+customers <- data.frame(
+  bills = sample(200:500, 10),
+  vouchers = sample(c(T,F), size=10, replace=T,
+                     prob=c(0.4,0.6)
+                     )
+)
+head(customers)
+```
+```{r}
+bill <- customers$bills[[3]]
+hasVoucher <- customers$vouchers[[3]]
+totalBill <- 
+{
+  startingBill <- bill
+  if(hasVoucher)
+  {
+    bill <- bill - 20
+  }
+  message("You initial bill is ", startingBill,".\n",
+          "You final bill is ", bill)
+  bill
+}
+print(totalBill)
+```
+**block programming**
+```{r}
+# Given some information
+R <- 0.09#年利率
+M <- 10000#本金
+T <- 3#存幾年
+# What I need to do
+PDV <- 
+{
+  M/(1+R)**T
+}
+```
+
+**Function**
+
+```{r}
+#{}將programming block 存成可以重複再使用
+#given information
+
+getPDV <- function(R,M,T) #<- { usually put here      Function class
+  { 
+  M/(1+R)**T #<- function body
+}
+getPDV(0.09 ,T = 3, M = 10000 )
+
+```
+
+```{r}
+debug(getPDV)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
